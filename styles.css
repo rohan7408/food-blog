@@ -1,0 +1,250 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navigation styles */
+.nav {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed; /* Add this line */
+  width: 100%; /* Add this line */
+  z-index: 1000; /* Add this line */
+}
+
+.logo h2 {
+  margin: 0;
+}
+
+.toggle {
+  display: none;
+}
+
+.toggle-icon {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+}
+
+/* Content styles */
+.content {
+  display: flex;
+}
+
+.content a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+/* Homepage-specific styles */
+.home {
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/495/760/53/cuisine-food-india-indian-wallpaper-preview.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.home-text {
+  font-size: 36px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* About Us section styles */
+.about {
+  background-color: #f4f4f4;
+  padding: 50px 0;
+}
+
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  padding: 0 20px;
+  text-align: justify;
+}
+
+.about-text h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.about-text p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.about-img {
+  flex: 1;
+  text-align: center;
+}
+
+.about-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Food section styles */
+.food {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Display three items per row by default */
+  gap: 20px; /* Spacing between grid items */
+  padding: 20px;
+}
+
+.food-item {
+  text-align: center;
+}
+
+.food-item img {
+  width: 100%;
+  height: auto;
+}
+
+.food-item h3 {
+  margin: 10px 0;
+}
+
+.food-item p {
+  margin: 5px 0;
+}
+
+/* Adjusting for mobile */
+@media screen and (max-width: 768px) {
+  .food {
+    grid-template-columns: 1fr; /* Display one item per row on mobile */
+  }
+}
+
+/* Customer Counts section styles */
+.customer-counts {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("https://www.wien.info/resource/image/290094/Hero-Header/1890/700/7c3fb902922b8ff2e8592e9b1e4a4611/90C666B70CAC6FF3906143BFE8E43439/3-4-do-co-41123.webp");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.customer-counts h2 {
+  text-align: center;
+}
+
+.count-items {
+  display: flex;
+  justify-content: space-around;
+}
+
+.count-item {
+  text-align: center;
+}
+
+/* Contact form styles */
+.contact {
+  background-color: #f4f4f4;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background-color: #ffa500;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff8c00;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nav.active .content {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav .content a {
+    padding: 15px 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .toggle {
+    display: block;
+    cursor: pointer;
+  }
+}
